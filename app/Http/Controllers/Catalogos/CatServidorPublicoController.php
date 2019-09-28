@@ -12,8 +12,11 @@ class CatServidorPublicoController extends Controller
         return response()->json($datos);
     }
 
-    public function getCatTiposServidoresPublicos(){
-        $datos = \App\Models\CatServidorPublico::select('id as valor', 'nombre as descripcion')->get();
+    public function getCatTiposServidoresPublicos(Request $request, $id){
+        $datos = \App\Models\CatTipoServidorPublico::where('id_servidor_publico', $id)
+                            ->select('id as valor', 'nombre as descripcion')
+                            ->get();
+
         return response()->json($datos);
     }
 }

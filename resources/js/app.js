@@ -31,3 +31,11 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+var mask = require('jquery-mask-plugin');
+$.mask = mask;
+window.mask = mask;
+
+var bootstrapTable = require('bootstrap-table');
+$.bootstrapTable = bootstrapTable;
+window.bootstrapTable = bootstrapTable;

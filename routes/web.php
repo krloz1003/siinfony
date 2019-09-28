@@ -21,5 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'api/catalogos'], function() {
     Route::get('servidores_publicos', 'Catalogos\CatServidorPublicoController@getCatServidoresPublicos');
-    Route::get('tipos_servidores_publicos', 'Catalogos\CatServidorPublicoController@getCatTiposServidoresPublicos');    
+    Route::get('tipos_servidores_publicos/{id}', 'Catalogos\CatServidorPublicoController@getCatTiposServidoresPublicos');    
 });
+
+Route::get('encuesta/get_encuestas', 'EncuestaController@getEncuestas');
+Route::resource('encuesta', 'EncuestaController');
